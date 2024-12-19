@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Person implements Cloneable {
+public class Person implements Cloneable, Comparable {
     private String name;
     private int age;
     private ArrayList<String> hobbies;
@@ -12,6 +12,22 @@ public class Person implements Cloneable {
         this.name = name;
         this.age = age;
         this.hobbies = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public void addHobby(String hobby) {
@@ -32,6 +48,16 @@ public class Person implements Cloneable {
         clone.hobbies = new ArrayList<>(hobbies);
 
         return clone;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (this.age > ((Person)o).age)
+            return 1;
+        else if (this.age < ((Person)o).age)
+            return -1;
+        else
+            return 0;
     }
 
     @Override

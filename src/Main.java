@@ -20,5 +20,15 @@ public class Main {
 
         System.out.println(mountkiara);
         System.out.println(impianemas);
+
+        b.setName("Ruby");
+        b.setAge(17);
+
+        if(a.compareTo(b) > 0)
+            System.out.println(a.getName() + " is older than " + b.getName());
+        else if(a.compareTo(b) < 0)
+            System.out.println(a.getName() + " is younger than " + b.getName());
+        else
+            System.out.println(a.getName() + " is the same age with " + b.getName());
     }
 }
